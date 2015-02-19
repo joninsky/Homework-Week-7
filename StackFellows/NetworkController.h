@@ -12,6 +12,8 @@
 
 +(id)sharedService;
 -(void)fetchQuestionsForSearchTerm:(NSString *)searchTerm completionHandle:(void (^) (NSArray *results, NSString *error))complete;
+
+-(void)fetchUserProfile: (void (^)(NSDictionary *jsonDictionary, NSString *error))completion;
 -(void)fetchUserImage:(NSURL*)theURL completionHandler:(void (^)(UIImage *image))completion;
 
 @end

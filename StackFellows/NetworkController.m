@@ -58,10 +58,51 @@
         }
           break;
       }
-      
-      
-      
-      
+    }
+  }];
+  [dataTask resume];
+}
+
+
+-(void)fetchUserProfile: (void (^)(NSDictionary *jsonDictionary, NSString *error))completion {
+  //Get the token fromt he user defaults
+  NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+  NSString *token = [userDefaults objectForKey:@"token"];
+  //Create the string version and insert the token key
+  NSString *urlString = [[NSString alloc] initWithFormat:@"https://api.stackexchange.com/2.2/me?order=desc&sort=reputation&site=stackoverflow&access_token=%@&key=Cqcpk6vU6otlh86XaBrErA((", token];//;?order=desc&sort=reputation&site=stackoverflow"];//&access_token=%@", token]; ?access_token=%@", token
+  NSLog(@"%@", urlString);
+  //Init an NSURL with the url string
+  NSURL *url = [[NSURL alloc] initWithString:urlString];
+  //Create a request and set the type to post
+  NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:url];
+  request.HTTPMethod = @"GET";
+  //[request setValue:token forHTTPHeaderField:@"Authorization"];
+  //Create the data task and give it a shared instance of NSURLSession, the request, and then the completion handlerer logic.
+  NSURLSessionTask *dataTask = [[NSURLSession sharedSession] dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+    //Check the error
+    if (error) {
+      completion(nil, @"Error getting on the internet");
+    }else{
+      NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *)response;
+      NSLog(@"%ld", (long)httpResponse.statusCode);
+      switch (httpResponse.statusCode) {
+        case 200 ... 299:
+        {
+          NSDictionary *theDictionarywithUserInfo = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+          
+          dispatch_async(dispatch_get_main_queue(), ^{
+            
+            completion(theDictionarywithUserInfo, nil);
+          });
+        }
+          break;
+          
+        default:
+        {
+          NSLog(@"%ld", (long)httpResponse.statusCode);
+        }
+          break;
+      }
     }
   }];
   [dataTask resume];

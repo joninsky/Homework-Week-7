@@ -21,6 +21,8 @@
 		4EA0A42E1A93E574003F8778 /* QuestionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EA0A42D1A93E574003F8778 /* QuestionTableViewCell.m */; };
 		4EA0A4321A93E717003F8778 /* NetworkController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EA0A4311A93E717003F8778 /* NetworkController.m */; };
 		4EA0A4361A93EFEE003F8778 /* QuestionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EA0A4351A93EFEE003F8778 /* QuestionModel.m */; };
+		4EB1AF321A954E540030C31A /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EB1AF311A954E540030C31A /* ProfileViewController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		4EB1AF351A954F4C0030C31A /* UserProfileModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EB1AF341A954F4C0030C31A /* UserProfileModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +62,11 @@
 		4EA0A4311A93E717003F8778 /* NetworkController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkController.m; sourceTree = "<group>"; };
 		4EA0A4341A93EFEE003F8778 /* QuestionModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestionModel.h; sourceTree = "<group>"; };
 		4EA0A4351A93EFEE003F8778 /* QuestionModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionModel.m; sourceTree = "<group>"; };
+		4EB1AF301A954E540030C31A /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
+		4EB1AF311A954E540030C31A /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
+		4EB1AF331A954F4C0030C31A /* UserProfileModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserProfileModel.h; sourceTree = "<group>"; };
+		4EB1AF341A954F4C0030C31A /* UserProfileModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserProfileModel.m; sourceTree = "<group>"; };
+		4EB1AF361A9554410030C31A /* MenuPressedDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MenuPressedDelegate.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +148,8 @@
 				4EA0A3FE1A93A697003F8778 /* StackFellows.xcdatamodeld */,
 				4EA0A4341A93EFEE003F8778 /* QuestionModel.h */,
 				4EA0A4351A93EFEE003F8778 /* QuestionModel.m */,
+				4EB1AF331A954F4C0030C31A /* UserProfileModel.h */,
+				4EB1AF341A954F4C0030C31A /* UserProfileModel.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -168,8 +177,11 @@
 				4EA0A4271A93AEB4003F8778 /* BurgerContainerViewController.m */,
 				4EA0A4291A93E54D003F8778 /* QuestionSearchViewController.h */,
 				4EA0A42A1A93E54D003F8778 /* QuestionSearchViewController.m */,
+				4EB1AF301A954E540030C31A /* ProfileViewController.h */,
+				4EB1AF311A954E540030C31A /* ProfileViewController.m */,
 				4EA0A42F1A93E578003F8778 /* Cell Controllers */,
 				4EA0A4331A93E720003F8778 /* Network Controller */,
+				4EB1AF371A9555200030C31A /* Delegates */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -190,6 +202,14 @@
 				4EA0A4311A93E717003F8778 /* NetworkController.m */,
 			);
 			name = "Network Controller";
+			sourceTree = "<group>";
+		};
+		4EB1AF371A9555200030C31A /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				4EB1AF361A9554410030C31A /* MenuPressedDelegate.h */,
+			);
+			name = Delegates;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -294,12 +314,14 @@
 			files = (
 				4EA0A4001A93A697003F8778 /* StackFellows.xcdatamodeld in Sources */,
 				4EA0A42B1A93E54D003F8778 /* QuestionSearchViewController.m in Sources */,
+				4EB1AF351A954F4C0030C31A /* UserProfileModel.m in Sources */,
 				4EA0A4281A93AEB4003F8778 /* BurgerContainerViewController.m in Sources */,
 				4EA0A3FD1A93A697003F8778 /* AppDelegate.m in Sources */,
 				4EA0A4251A93A9BE003F8778 /* WebOAuthViewController.m in Sources */,
 				4EA0A4361A93EFEE003F8778 /* QuestionModel.m in Sources */,
 				4EA0A42E1A93E574003F8778 /* QuestionTableViewCell.m in Sources */,
 				4EA0A4031A93A697003F8778 /* MenuTableViewController.m in Sources */,
+				4EB1AF321A954E540030C31A /* ProfileViewController.m in Sources */,
 				4EA0A4321A93E717003F8778 /* NetworkController.m in Sources */,
 				4EA0A3FA1A93A697003F8778 /* main.m in Sources */,
 			);
@@ -494,6 +516,7 @@
 				4EA0A41C1A93A697003F8778 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4EA0A41D1A93A697003F8778 /* Build configuration list for PBXNativeTarget "StackFellowsTests" */ = {
 			isa = XCConfigurationList;
@@ -502,6 +525,7 @@
 				4EA0A41F1A93A697003F8778 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
